@@ -61,8 +61,8 @@ const fs = require('fs')
 // })
 
 //DELETAR PASTA COM TODO O SEU CONTEÚDO DENTRO.
-fs.rmdir('./public', {recursive: true}, (err)=>{
-  if(err){
-    throw err
-  }
-})
+// fs.rmdir('./public', {recursive: true}, (err)=>{
+//   if(err){
+//     throw err
+//   }
+// })

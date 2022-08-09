@@ -1,16 +1,23 @@
 const http = require('http')
+const fs = require('fs')
 
 const hostname = '127.0.0.1' //localhost
 const PORT = process.env.PORT || 3000 //porta onde o projeto vai rodar
 
 //criando um servidor
-const server = http.createServer((req, res) =>  {
+const server = http.createServer((req, res) => {
   let url = req.url
 
   if (url === '/') {
-    res.statusCode = 200
-    res.setHeader('Content-type', 'text/html; charset=utf-8')
-    res.end('<h1> Olá Mundo!</h1>')
+    fs.readFileSync('../public/index.html', (err, content) => {
+      if (err) {
+        throw err
+      }
+
+      res.statusCode = 200
+      res.setHeader('Content-type', 'text/html; charset=utf-8')
+      res.end(content)
+    })
   } else if (url === '/sobre') {
     res.statusCode = 200
     res.setHeader('Content-type', 'text/html; charset=utf-8')
