@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/italoknd/node-course/issues"
   },
-  "homepage": "https://github.com/italoknd/node-course#readme"
+  "homepage": "https://github.com/italoknd/node-course#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
 }

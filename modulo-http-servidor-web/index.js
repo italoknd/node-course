@@ -9,6 +9,12 @@ const server = http.createServer((req, res) => {
   let url = req.url
 
   if (url === '/') {
+    if (fs.existsSync('../public/index.html')) {
+      console.log('existe o path')
+    } else {
+      console.log('Não existe o path.')
+    }
+
     fs.readFileSync('../public/index.html', (err, content) => {
       if (err) {
         throw err
