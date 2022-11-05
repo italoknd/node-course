@@ -23,6 +23,14 @@ const Usuarios = sequelize.define('usuarios', {
     type: Sequelize.STRING //TEM LIMITE DE TAMANHO
   },
   idade: {
-    type: Sequelize.STRING //NÃO TEM LIMITE DE TAMANHO
+    type: Sequelize.INTEGER //NÃO TEM LIMITE DE TAMANHO
   }
 })
+
+Usuarios.create({
+  nome: "Italo Pedroza",
+  idade: 22
+})
+
+//Usuarios.sync({ force: true })
+//após o uso é recomendado comentar ou apagar a linha quando estiver sendo usado com o nodemon, para nao recriar a tabela sem querer 
