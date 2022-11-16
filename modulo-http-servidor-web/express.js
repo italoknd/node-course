@@ -1,4 +1,5 @@
 const http = require('http')
+const { readFile } = require('fs')
 
 const hostname = 'localhost'
 const PORT = 9001
@@ -8,8 +9,10 @@ http
     let url = req.url
 
     if (url === '/') {
-      res.write('Welcome to our page!')
-      res.end()
+      readFile(__dirname + '/index.html', 'utf8', (err, data) => {
+        if (err) throw err
+        else res.end(data)
+      })
     } else if (url === '/signup') {
       res.write('Info your name:')
       res.end()
